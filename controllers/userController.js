@@ -95,8 +95,8 @@ const adminLogin = async (req, res) => {
   const token = await jwt.sign({ email: email }, process.env.JWT_SECRET, {
     expiresIn: "7d",
 });
-  res.cookie("adminToken" , token);
-  res.json({success: true , message: "admin logged in successfully"})
+  res.cookie("token" , token);
+  res.json({success: true , message: "admin logged in successfully" , token})
  }else{
   res.json({success: false , message: "invalid admin credentials"})
  }

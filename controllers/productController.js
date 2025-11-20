@@ -30,9 +30,9 @@ const addProduct = async (req, res) => {
    }
    )
 
-   await product.save();
+   const product_ = await product.save();
 
-  res.json({success: true , message: "product added successfully"})
+  res.json({success: true , message: "product added successfully" , product_})
 
   } catch (e) {
     console.error("ADD PRODUCT ERROR:", e); // Log the full error
